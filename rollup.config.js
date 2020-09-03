@@ -6,7 +6,6 @@ import simplevars from 'postcss-simple-vars'
 import nested from 'postcss-nested'
 import postcss from 'rollup-plugin-postcss'
 import postcssPresetEnv from 'postcss-preset-env'
-import { eslint } from 'rollup-plugin-eslint'
 import reactSvg from 'rollup-plugin-react-svg'
 import pkg from './package.json'
 
@@ -16,18 +15,27 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
+      exports: 'named',
     },
     {
       file: pkg.module,
       format: 'es',
     },
-    // {
-    //   file: pkg.module,
-    //   format: 'umd',
-    //   name: 'reactVerificationCodeVirtualKeyboard',
-    // },
+    {
+      file: pkg.unpkg,
+      format: 'umd',
+      name: 'reactVerificationCodeVirtualKeyboard',
+      globals: {
+        // 这跟external 是配套使用的，指明global.React即是外部依赖react
+        react: 'React',
+        'antd-mobile': 'antdMobile',
+        classnames: 'classnames',
+        lodash: '_',
+        'count-down-ts': 'countdown',
+      },
+    },
   ],
-  external: ['antd-mobile', 'react', 'prop-types', 'classnames', 'count-down-ts', 'lodash'],
+  external: ['antd-mobile', 'react', 'classnames', 'count-down-ts', 'lodash'],
   plugins: [
     typescript({
       typescript: require('typescript'),
