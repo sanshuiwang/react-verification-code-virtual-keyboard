@@ -1,0 +1,20 @@
+/** Use Demo:: 
+.class1 {
+  .keyframes(fade-in;{
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+      });
+
+  .animation(fade-in 1s linear infinite alternate);
+}
+*/
+
+.keyframes(@name; @arguments) {
+  @keyframes @name {
+    @arguments();
+  }
+}
+
+.animation(@arguments) {
+  animation: @arguments;
+}

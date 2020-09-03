@@ -1,0 +1,76 @@
+{
+  "name": "react-verification-code-virtual-keyboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/react-verification-code-virtual-keyboard.js",
+  "module": "dist/react-verification-code-virtual-keyboard.esm.js",
+  "unpkg": "dist/react-verification-code-virtual-keyboard.umd.js",
+  "jsnext:main": "dist/react-verification-code-virtual-keyboard.esm.js",
+  "typings": "dist/src/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/react-verification-code-virtual-keyboard.umd.js",
+    "dist/react-verification-code-virtual-keyboard.esm.js",
+    "dist/react-verification-code-virtual-keyboard.js",
+    "dist/src/"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup -c",
+    "test": "jest --config ./jest.config.js",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanshuiwang/react-verification-code-virtual-keyboard.git"
+  },
+  "keywords": [],
+  "author": "sanshuiwang <768188667@qq.com> (https://github.com/sanshuiwang)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sanshuiwang/react-verification-code-virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/sanshuiwang/react-verification-code-virtual-keyboard#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^26.0.13",
+    "@types/lodash": "^4.14.158",
+    "@types/react": "^16.9.44",
+    "core-js": "^3.6.5",
+    "coveralls": "^3.1.0",
+    "jest": "^26.2.2",
+    "less": "^3.12.2",
+    "postcss-nested": "^4.2.3",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-simple-vars": "^5.0.2",
+    "react-coding-style": "^1.1.1",
+    "rollup": "^2.23.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-react-svg": "^3.0.3",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^26.1.4",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.2"
+  },
+  "peerDependencies": {
+    "antd-mobile": ">=2.3.3",
+    "classnames": ">=2.2.6",
+    "count-down-ts": ">=1.0.3",
+    "lodash": ">=4.17.19",
+    "react": ">=16.8.0"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.3.3",
+    "classnames": "^2.2.6",
+    "count-down-ts": "^1.0.3",
+    "lodash": "^4.17.19",
+    "react": "^16.13.1"
+  }
+}

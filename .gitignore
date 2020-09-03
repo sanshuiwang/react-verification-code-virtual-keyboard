@@ -1,0 +1,14 @@
+#npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+#osx
+.DS_Store
+
+# dist
+dist/
+coverage/
+
+#zip
+*.tgz
