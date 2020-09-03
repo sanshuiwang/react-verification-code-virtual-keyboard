@@ -1,17 +1,18 @@
 {
   "name": "react-verification-code-virtual-keyboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Based on antd-mobile Modal, InputItem. Use css border-image instead of border. Developed a four-digit verification code input box with virtual keyboard and pasting functions.",
   "main": "dist/react-verification-code-virtual-keyboard.js",
   "module": "dist/react-verification-code-virtual-keyboard.esm.js",
   "unpkg": "dist/react-verification-code-virtual-keyboard.umd.js",
   "jsnext:main": "dist/react-verification-code-virtual-keyboard.esm.js",
-  "typings": "dist/src/index.d.ts",
+  "typings": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
     "dist/react-verification-code-virtual-keyboard.umd.js",
     "dist/react-verification-code-virtual-keyboard.esm.js",
-    "dist/react-verification-code-virtual-keyboard.js"
+    "dist/react-verification-code-virtual-keyboard.js",
+    "dist/index.d.ts"
   ],
   "scripts": {
     "build": "rm -rf dist && rollup -c",
@@ -22,7 +23,11 @@
     "type": "git",
     "url": "git+https://github.com/sanshuiwang/react-verification-code-virtual-keyboard.git"
   },
-  "keywords": [],
+  "keywords": [
+    "verCode",
+    "verification code",
+    "virtual keyboard"
+  ],
   "author": "sanshuiwang <768188667@qq.com> (https://github.com/sanshuiwang)",
   "license": "GPL-3.0",
   "bugs": {

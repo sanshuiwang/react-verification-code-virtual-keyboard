@@ -9,7 +9,7 @@
 [![code style: prettier][prettier-image]][prettier-url]
 ![][license-url]
 
-react-verification-code-virtual-keyboard .
+Based on antd-mobile Modal, InputItem. Use css border-image instead of border. Developed a four-digit verification code input box with virtual keyboard and pasting functions.
 
 ## LICENSE
 

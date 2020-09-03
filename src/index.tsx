@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, useEffect, forwardRef, useImperativeHandle } from 'react'
+import React, { useCallback, useState, useEffect, forwardRef, useImperativeHandle } from 'react'
 import { Modal, InputItem } from 'antd-mobile'
 import classnames from 'classnames'
 import _ from 'lodash'
@@ -9,15 +9,7 @@ import DeleteSvg from './static/delete.svg'
 
 import styles from './index.less'
 import stylesCss from './index.css'
-
-function useIsMountedRef() {
-  const isMountedRef = useRef(null)
-  useEffect(() => {
-    isMountedRef.current = true
-    return () => (isMountedRef.current = false)
-  })
-  return isMountedRef
-}
+//stylesCss border image 实现border太粗情况
 
 const NUMBER_KEYBOARD = [
   [1, 2, 3],
@@ -59,8 +51,6 @@ function VerificationCode(props: IProps, ref: any): JSX.Element | null {
     return null
   }
 
-  const isMountedRef = useIsMountedRef()
-
   const [inputFocus, setInputFocus] = useState<boolean[]>([true, false, false, false])
   const [inputValue, setInputValue] = useState<number[]>([])
   const [isCodeImmediatelySendVerifySelf, setIsCodeImmediatelySendVerifySelf] = useState<boolean>(
@@ -73,7 +63,7 @@ function VerificationCode(props: IProps, ref: any): JSX.Element | null {
      * 1. 执行发送验证码函数
      * 2. 进行倒计时
      * */
-    if (isCodeImmediatelySendVerifySelf && isMountedRef.current) {
+    if (isCodeImmediatelySendVerifySelf) {
       onSendVerifyCode && onSendVerifyCode()
       countdown.start(59, 0, (c) => {
         setCountdownNum(c)
@@ -82,7 +72,7 @@ function VerificationCode(props: IProps, ref: any): JSX.Element | null {
         }
       })
     }
-  }, [isCodeImmediatelySendVerifySelf, setCountdownNum, onSendVerifyCode, isMountedRef])
+  }, [isCodeImmediatelySendVerifySelf, setCountdownNum, onSendVerifyCode])
 
   useImperativeHandle(
     ref,
@@ -184,16 +174,17 @@ function VerificationCode(props: IProps, ref: any): JSX.Element | null {
         <ul className={styles.boxWrapper}>
           <li className={classnames({ [styles.focus]: inputFocus[0] })}>
             {inputValue[0]}
-
             <InputItem
               value=""
-              disabled={!inputFocus[0]}
+              disabled={!inputFocus[0]} //根据拥有的值个数，判断具有值不启用输入框
               className={classnames(styles.inputWrapper)}
               type="text"
               onChange={(val) => {
+                /**系统粘贴功能造成的change, 自然就有了黏贴一串数字到每个输入框功能 */
                 inputOnChange(val)
               }}
               onClick={() => {
+                /**阻止弹出系统键盘, 点击就失去焦点 */
                 inputPreventSystemKeyboard()
               }}
             />
