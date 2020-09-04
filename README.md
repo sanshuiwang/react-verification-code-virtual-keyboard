@@ -11,6 +11,83 @@
 
 Based on antd-mobile Modal, InputItem. Use css border-image instead of border. Developed a four-digit verification code input box with virtual keyboard and pasting functions.
 
+## Install
+
+### yarn
+
+```bash
+yarn add react-verification-code-virtual-keyboard
+```
+
+### npm
+
+```bash
+npm install --save react-verification-code-virtual-keyboard
+```
+
+### UMD
+
+```javascript
+<script src="https://unpkg.com/react-verification-code-virtual-keyboard@1.0.0/dist/react-verification-code-virtual-keyboard.umd.js"></script>
+```
+
+> Tips: You can find the library on window.ReactVerificationCodeVirtualKeyboard.
+
+## Import
+
+### ES2015
+
+```javascript
+import ReactVerificationCodeVirtualKeyboard from 'react-verification-code-virtual-keyboard'
+```
+
+### CommonJS
+
+```javascript
+const ReactVerificationCodeVirtualKeyboard = require('react-verification-code-virtual-keyboard')
+```
+
+## Usage
+
+```javascript
+import ReactVerificationCodeVirtualKeyboard from 'react-verification-code-virtual-keyboard'
+
+function Example() {
+  return (
+    <ReactVerificationCodeVirtualKeyboard
+      visible={true}
+      onClose={() => {}}
+      maskClosable={true}
+      headerLeftContent={[<b key="X">X</b>]}
+      headerTitle="验证码标题"
+      headerRightContent={[]}
+      tipMessage="验证码提示信息"
+      onInputChange={() => {}}
+      isCodeImmediatelySendVerify={true}
+      onSendVerifyCode={() => {}}
+    >
+      {/** List only children or Null */}
+    </ReactVerificationCodeVirtualKeyboard>
+  )
+}
+```
+
+### Params
+
+| Property                    | Description                                                                                                    | Type                  | Default   | isRequired |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------------- | --------- | ---------- |
+| visible                     | Show Modal Verification Code UI                                                                                | boolean               | false     | true       |
+| onClose                     | Close Modal Verification Code UI (Default clear countdown)                                                     | function              | undefined | true       |
+| maskClosable                | Whether the mask layer of modal is clickable                                                                   | boolean               | true      | false      |
+| headerLeftContent           | Left half of head                                                                                              | JSX.Element[]         | []        | false      |
+| headerTitle                 | title                                                                                                          | JSX.Element \| string |
+| '请输入验证码'              | false                                                                                                          |
+| headerRightContent          | Right half of head                                                                                             | JSX.Element[]         | []        | false      |
+| tipMessage                  | Tips                                                                                                           | JSX.Element \| string | '验证码'  | false      |
+| onInputChange               | Input Box handle change value                                                                                  | function              | undefined | false      |
+| isCodeImmediatelySendVerify | Whether to send the verification code immediately when the modal pops up                                       | boolean               | false     | false      |
+| onSendVerifyCode            | If the isCodeImmediatelySendVerify value is true, auto excute onSendVerifyCode. 点击获取验证码，将执行此函数。 | function              | undefined | true       |
+
 ## LICENSE
 
 [GPL v3 License](https://raw.githubusercontent.com/sanshuiwang/react-verification-code-virtual-keyboard/master/LICENSE)

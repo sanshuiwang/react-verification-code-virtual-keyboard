@@ -24,7 +24,7 @@ export default {
     {
       file: pkg.unpkg,
       format: 'umd',
-      name: 'reactVerificationCodeVirtualKeyboard',
+      name: 'ReactVerificationCodeVirtualKeyboard',
       globals: {
         // 这跟external 是配套使用的，指明global.React即是外部依赖react
         react: 'React',
